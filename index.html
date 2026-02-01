@@ -869,6 +869,404 @@
       border-color: #facc15;
       color: #facc15;
     }
+
+    .strategy-simulator {
+      grid-column: 1 / -1;
+      background: radial-gradient(circle at top left, #1e1b4b 0, #0f172a 70%);
+      border: 2px solid rgba(139,92,246,0.4);
+    }
+
+    .sim-controls {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .sim-actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn-sim {
+      background: linear-gradient(135deg, #8b5cf6, #6366f1);
+      color: white;
+      box-shadow: 0 12px 28px rgba(139,92,246,0.4);
+    }
+
+    .btn-sim:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 18px 38px rgba(139,92,246,0.55);
+    }
+
+    .sim-results {
+      margin-top: 14px;
+      padding: 12px;
+      background: rgba(15,23,42,0.6);
+      border-radius: 12px;
+      border: 1px solid rgba(148,163,184,0.3);
+      display: none;
+    }
+
+    .sim-results.active {
+      display: block;
+    }
+
+    .sim-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .sim-progress {
+      margin-top: 8px;
+      padding: 8px;
+      background: rgba(15,23,42,0.8);
+      border-radius: 8px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .progress-bar {
+      width: 100%;
+      height: 8px;
+      background: rgba(15,23,42,0.9);
+      border-radius: 999px;
+      overflow: hidden;
+      margin-top: 6px;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #8b5cf6, #6366f1);
+      border-radius: 999px;
+      transition: width 0.2s ease;
+    }
+
+    .sim-chart {
+      margin-top: 12px;
+      height: 200px;
+      background: rgba(15,23,42,0.9);
+      border-radius: 8px;
+      padding: 10px;
+      position: relative;
+    }
+
+    .chart-line {
+      stroke: #8b5cf6;
+      stroke-width: 2;
+      fill: none;
+    }
+
+    .chart-grid {
+      stroke: rgba(148,163,184,0.2);
+      stroke-width: 1;
+    }
+
+    .chart-label {
+      font-size: 10px;
+      fill: var(--muted);
+    }
+
+    .strategy-info {
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 4px;
+      padding: 6px 8px;
+      background: rgba(139,92,246,0.1);
+      border-radius: 6px;
+      border: 1px solid rgba(139,92,246,0.3);
+    }
+
+    /* Blackjack Styles */
+    .blackjack-section {
+      grid-column: 1 / -1;
+      background: radial-gradient(circle at top left, #1e3a1e 0, #0f172a 70%);
+      border: 2px solid rgba(34,197,94,0.4);
+      margin-top: 20px;
+    }
+
+    .bj-game-area {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 16px;
+      margin-top: 12px;
+    }
+
+    @media (max-width: 920px) {
+      .bj-game-area {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .bj-controls {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .bj-table {
+      background: radial-gradient(ellipse at center, #0f4d2e 0%, #0a2818 70%);
+      border-radius: 16px;
+      padding: 20px;
+      border: 3px solid rgba(34,197,94,0.5);
+      min-height: 500px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .bj-dealer-area,
+    .bj-players-area {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .bj-player {
+      background: rgba(15,23,42,0.7);
+      border-radius: 12px;
+      padding: 12px;
+      border: 2px solid rgba(148,163,184,0.3);
+    }
+
+    .bj-player.active {
+      border-color: #22c55e;
+      box-shadow: 0 0 20px rgba(34,197,94,0.4);
+    }
+
+    .bj-player.dealer {
+      background: rgba(127,29,29,0.3);
+      border-color: rgba(248,113,113,0.5);
+    }
+
+    .bj-player-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .bj-player-name {
+      font-weight: 600;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .bj-player-status {
+      font-size: 11px;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: rgba(15,23,42,0.9);
+      border: 1px solid rgba(148,163,184,0.3);
+    }
+
+    .bj-player-status.win {
+      background: rgba(34,197,94,0.3);
+      border-color: rgba(34,197,94,0.7);
+      color: #bbf7d0;
+    }
+
+    .bj-player-status.lose {
+      background: rgba(239,68,68,0.3);
+      border-color: rgba(239,68,68,0.7);
+      color: #fecaca;
+    }
+
+    .bj-player-status.push {
+      background: rgba(234,179,8,0.3);
+      border-color: rgba(234,179,8,0.7);
+      color: #fef3c7;
+    }
+
+    .bj-player-status.blackjack {
+      background: linear-gradient(135deg, #facc15, #f59e0b);
+      border-color: #f59e0b;
+      color: #1f2937;
+      font-weight: 700;
+    }
+
+    .bj-cards {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+
+    .bj-card {
+      width: 60px;
+      height: 84px;
+      background: white;
+      border-radius: 6px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding: 6px 4px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      font-weight: 700;
+      position: relative;
+      font-size: 18px;
+    }
+
+    .bj-card.red {
+      color: #dc2626;
+    }
+
+    .bj-card.black {
+      color: #1f2937;
+    }
+
+    .bj-card.hidden {
+      background: linear-gradient(135deg, #1e40af, #7c3aed);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card-value {
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    .card-suit {
+      font-size: 24px;
+    }
+
+    .bj-hand-value {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    .bj-hand-value strong {
+      color: var(--text);
+      font-size: 16px;
+    }
+
+    .bj-game-actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+
+    .btn-bj {
+      background: linear-gradient(135deg, #22c55e, #16a34a);
+      color: white;
+    }
+
+    .btn-bj:hover:not(:disabled) {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 20px rgba(34,197,94,0.4);
+    }
+
+    .btn-bj-alt {
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      color: white;
+    }
+
+    .bj-bet-info {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    .bj-bet-info strong {
+      color: #fbbf24;
+    }
+
+    .bj-deck-info {
+      font-size: 11px;
+      color: var(--muted);
+      padding: 6px 10px;
+      background: rgba(15,23,42,0.6);
+      border-radius: 8px;
+      border: 1px solid rgba(148,163,184,0.2);
+      margin-top: 8px;
+    }
+
+    .bj-strategy-feedback {
+      margin-top: 12px;
+      padding: 10px 12px;
+      border-radius: 8px;
+      font-size: 12px;
+      border: 2px solid;
+      display: none;
+      animation: slideIn 0.3s ease;
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .bj-strategy-feedback.correct {
+      background: rgba(34,197,94,0.2);
+      border-color: rgba(34,197,94,0.6);
+      color: #bbf7d0;
+    }
+
+    .bj-strategy-feedback.incorrect {
+      background: rgba(239,68,68,0.2);
+      border-color: rgba(239,68,68,0.6);
+      color: #fecaca;
+    }
+
+    .bj-strategy-feedback strong {
+      font-weight: 700;
+      color: white;
+    }
+
+    .bj-strategy-stats {
+      margin-top: 8px;
+      padding: 8px 10px;
+      background: rgba(15,23,42,0.6);
+      border-radius: 8px;
+      border: 1px solid rgba(148,163,184,0.2);
+      font-size: 11px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .bj-strategy-stats .stat-item {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .bj-strategy-stats .stat-label {
+      color: var(--muted);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .bj-strategy-stats .stat-value {
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .bj-strategy-stats .stat-value.good {
+      color: #4ade80;
+    }
+
+    .bj-strategy-stats .stat-value.bad {
+      color: #f87171;
+    }
   </style>
 </head>
 <body>
@@ -1032,9 +1430,883 @@
         </div>
       </div>
     </div>
+
+    <!-- Strategy Simulator -->
+    <div class="card strategy-simulator">
+      <div class="card-header">
+        <div class="card-title">🎯 Strategy Simulator</div>
+        <span class="tag">Automated Testing</span>
+      </div>
+      
+      <div class="sim-controls">
+        <div class="field">
+          <label>Strategy Type</label>
+          <select id="strategy-type">
+            <option value="flat">Flat Betting</option>
+            <option value="martingale">Martingale</option>
+            <option value="dual-martingale">Dual Martingale (2 Independent Bets)</option>
+            <option value="reverse-martingale">Reverse Martingale</option>
+            <option value="dalembert">D'Alembert</option>
+            <option value="fibonacci">Fibonacci</option>
+            <option value="labouchere">Labouchere</option>
+            <option value="paroli">Paroli (1-3-2-6)</option>
+          </select>
+          <div id="strategy-info" class="strategy-info"></div>
+        </div>
+
+        <div class="field">
+          <label>Bet Target <span id="bet-target-label"></span></label>
+          <select id="sim-bet-target">
+            <optgroup label="Even Money Bets (1:1)">
+              <option value="red">Red</option>
+              <option value="black">Black</option>
+              <option value="odd">Odd</option>
+              <option value="even">Even</option>
+              <option value="low">Low (1-18)</option>
+              <option value="high">High (19-36)</option>
+            </optgroup>
+            <optgroup label="2:1 Bets (Higher Risk/Reward)">
+              <option value="dozen-1">1st Dozen (1-12)</option>
+              <option value="dozen-2">2nd Dozen (13-24)</option>
+              <option value="dozen-3">3rd Dozen (25-36)</option>
+              <option value="column-1">Column 1 (1,4,7...34)</option>
+              <option value="column-2">Column 2 (2,5,8...35)</option>
+              <option value="column-3">Column 3 (3,6,9...36)</option>
+            </optgroup>
+            <optgroup label="Dual 2:1 Bets (Covers ~63%)" id="dual-bet-group" style="display:none;">
+              <option value="dual-dozen-1-2">1st & 2nd Dozens</option>
+              <option value="dual-dozen-1-3">1st & 3rd Dozens</option>
+              <option value="dual-dozen-2-3">2nd & 3rd Dozens</option>
+              <option value="dual-column-1-2">Columns 1 & 2</option>
+              <option value="dual-column-1-3">Columns 1 & 3</option>
+              <option value="dual-column-2-3">Columns 2 & 3</option>
+            </optgroup>
+          </select>
+          <span class="hint" id="bet-odds-hint">Pays 1:1 (even money)</span>
+        </div>
+
+        <div class="field">
+          <label>Initial Bet ($)</label>
+          <input type="number" id="sim-initial-bet" value="10" min="1" max="100">
+        </div>
+
+        <div class="field">
+          <label>Number of Rounds</label>
+          <input type="number" id="sim-rounds" value="100" min="1" max="10000">
+        </div>
+
+        <div class="field">
+          <label>Starting Bankroll ($)</label>
+          <input type="number" id="sim-starting-balance" value="1000" min="100" max="100000">
+        </div>
+
+        <div class="field">
+          <label>Max Bet Limit ($)</label>
+          <input type="number" id="sim-max-bet" value="500" min="10" max="10000">
+          <span class="hint">Prevents unlimited doubling</span>
+        </div>
+      </div>
+
+      <div class="sim-actions">
+        <button class="btn btn-sim" id="run-sim-btn">
+          ▶️ Run Simulation
+        </button>
+        <button class="btn btn-secondary" id="stop-sim-btn" disabled>
+          ⏹️ Stop
+        </button>
+        <button class="btn btn-secondary" id="clear-sim-btn">
+          🗑️ Clear Results
+        </button>
+      </div>
+
+      <div id="sim-progress" class="sim-progress" style="display: none;">
+        <div>Progress: <span id="sim-progress-text">0 / 0</span></div>
+        <div class="progress-bar">
+          <div id="progress-fill" class="progress-fill" style="width: 0%"></div>
+        </div>
+      </div>
+
+      <div id="sim-results" class="sim-results">
+        <div class="current-bets-title">Simulation Results</div>
+        <div class="sim-stats-grid">
+          <div class="stat-block">
+            <div class="stat-label">Final Balance</div>
+            <div class="stat-value" id="sim-final-balance">$0</div>
+            <div class="stat-sub" id="sim-profit-pct">0%</div>
+          </div>
+          <div class="stat-block">
+            <div class="stat-label">Rounds Played</div>
+            <div class="stat-value" id="sim-rounds-played">0</div>
+            <div class="stat-sub">of <span id="sim-rounds-total">0</span></div>
+          </div>
+          <div class="stat-block">
+            <div class="stat-label">Win / Loss</div>
+            <div class="stat-value"><span id="sim-wins">0</span> / <span id="sim-losses">0</span></div>
+            <div class="stat-sub"><span id="sim-win-rate">0%</span> win rate</div>
+          </div>
+          <div class="stat-block">
+            <div class="stat-label">Total Wagered</div>
+            <div class="stat-value" id="sim-total-wagered">$0</div>
+            <div class="stat-sub">Across all rounds</div>
+          </div>
+          <div class="stat-block">
+            <div class="stat-label">Max Balance</div>
+            <div class="stat-value" id="sim-max-balance">$0</div>
+            <div class="stat-sub">Peak reached</div>
+          </div>
+          <div class="stat-block">
+            <div class="stat-label">Max Drawdown</div>
+            <div class="stat-value" id="sim-max-drawdown">$0</div>
+            <div class="stat-sub">Lowest point</div>
+          </div>
+        </div>
+
+        <div id="sim-chart" class="sim-chart">
+          <svg id="balance-chart" width="100%" height="100%" viewBox="0 0 800 180">
+            <line class="chart-grid" x1="0" y1="90" x2="800" y2="90" />
+            <text class="chart-label" x="5" y="15">Balance Over Time</text>
+            <polyline id="balance-line" class="chart-line" points="" />
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- Blackjack Game -->
+    <div class="card blackjack-section">
+      <div class="card-header">
+        <div class="card-title">🃏 Blackjack</div>
+        <span class="tag">Dealer stands on 17</span>
+      </div>
+
+      <div class="bj-game-area">
+        <div class="bj-controls">
+          <div class="field">
+            <label>Number of Decks</label>
+            <select id="bj-num-decks">
+              <option value="1">1 Deck</option>
+              <option value="2">2 Decks</option>
+              <option value="4">4 Decks</option>
+              <option value="6" selected>6 Decks</option>
+              <option value="8">8 Decks</option>
+            </select>
+            <span class="hint" id="bj-deck-count">312 cards</span>
+          </div>
+
+          <div class="field">
+            <label>AI Players</label>
+            <select id="bj-num-players">
+              <option value="0">Just You</option>
+              <option value="1">1 AI Player</option>
+              <option value="2" selected>2 AI Players</option>
+              <option value="3">3 AI Players</option>
+              <option value="4">4 AI Players</option>
+              <option value="5">5 AI Players</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label>Your Bet ($)</label>
+            <input type="number" id="bj-bet-amount" value="10" min="1" max="500">
+          </div>
+
+          <button class="btn btn-bj" id="bj-deal-btn">
+            🎴 Deal New Hand
+          </button>
+
+          <button class="btn btn-secondary" id="bj-reset-deck-btn">
+            🔄 Shuffle New Shoe
+          </button>
+
+          <div class="bj-deck-info">
+            <div><strong>Cards Remaining:</strong> <span id="bj-cards-remaining">312</span></div>
+            <div style="margin-top: 4px;"><strong>Penetration:</strong> <span id="bj-penetration">0%</span></div>
+          </div>
+
+          <div class="bj-strategy-stats">
+            <div class="stat-item">
+              <div class="stat-label">Correct</div>
+              <div class="stat-value good" id="bj-correct-plays">0</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-label">Incorrect</div>
+              <div class="stat-value bad" id="bj-incorrect-plays">0</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-label">Accuracy</div>
+              <div class="stat-value" id="bj-accuracy">-</div>
+            </div>
+          </div>
+
+          <div id="bj-strategy-feedback" class="bj-strategy-feedback"></div>
+        </div>
+
+        <div class="bj-table">
+          <div class="bj-dealer-area">
+            <div class="bj-player dealer" id="bj-dealer">
+              <div class="bj-player-header">
+                <div class="bj-player-name">🎩 Dealer</div>
+                <div class="bj-player-status" id="dealer-status"></div>
+              </div>
+              <div class="bj-cards" id="dealer-cards"></div>
+              <div class="bj-hand-value" id="dealer-value"></div>
+            </div>
+          </div>
+
+          <div class="bj-players-area" id="bj-players-area">
+            <!-- Players will be generated here -->
+          </div>
+
+          <div class="bj-game-actions" id="bj-game-actions" style="display: none;">
+            <button class="btn btn-bj" id="bj-hit-btn">👊 Hit</button>
+            <button class="btn btn-bj-alt" id="bj-stand-btn">✋ Stand</button>
+            <button class="btn btn-secondary" id="bj-double-btn">2️⃣ Double Down</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <script>
+    // --- Blackjack Game State ---
+    let bjDeck = [];
+    let bjNumDecks = 6;
+    let bjPlayers = [];
+    let bjDealer = { cards: [], value: 0, busted: false };
+    let bjCurrentPlayerIndex = -1;
+    let bjGameInProgress = false;
+    let bjPlayerBet = 10;
+    let bjCorrectPlays = 0;
+    let bjIncorrectPlays = 0;
+
+    const SUITS = ['♠', '♥', '♦', '♣'];
+    const VALUES = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'];
+
+    // --- Blackjack Functions ---
+    function createDeck(numDecks) {
+      const deck = [];
+      for (let d = 0; d < numDecks; d++) {
+        for (const suit of SUITS) {
+          for (const value of VALUES) {
+            deck.push({ value, suit });
+          }
+        }
+      }
+      return shuffleDeck(deck);
+    }
+
+    function shuffleDeck(deck) {
+      const shuffled = [...deck];
+      for (let i = shuffled.length - 1; i > 0; i--) {
+        const arr = new Uint32Array(1);
+        crypto.getRandomValues(arr);
+        const j = arr[0] % (i + 1);
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+      }
+      return shuffled;
+    }
+
+    function getCardNumericValue(card) {
+      if (card.value === 'A') return 11;
+      if (['J', 'Q', 'K'].includes(card.value)) return 10;
+      return parseInt(card.value);
+    }
+
+    function calculateHandValue(cards) {
+      let value = 0;
+      let aces = 0;
+
+      for (const card of cards) {
+        const cardValue = getCardNumericValue(card);
+        value += cardValue;
+        if (card.value === 'A') aces++;
+      }
+
+      // Adjust for aces
+      while (value > 21 && aces > 0) {
+        value -= 10;
+        aces--;
+      }
+
+      return value;
+    }
+
+    function isBlackjack(cards) {
+      return cards.length === 2 && calculateHandValue(cards) === 21;
+    }
+
+    function hasAce(cards) {
+      return cards.some(card => card.value === 'A');
+    }
+
+    function isSoftHand(cards) {
+      if (!hasAce(cards)) return false;
+      let value = 0;
+      let aces = 0;
+      
+      for (const card of cards) {
+        const cardValue = getCardNumericValue(card);
+        value += cardValue;
+        if (card.value === 'A') aces++;
+      }
+      
+      // It's soft if we're counting an ace as 11
+      return value <= 21 && aces > 0;
+    }
+
+    function isPair(cards) {
+      if (cards.length !== 2) return false;
+      const val1 = getCardNumericValue(cards[0]);
+      const val2 = getCardNumericValue(cards[1]);
+      return val1 === val2;
+    }
+
+    function getBasicStrategyAction(playerCards, dealerUpCard, canDouble = true) {
+      const playerValue = calculateHandValue(playerCards);
+      const dealerValue = getCardNumericValue(dealerUpCard);
+      const soft = isSoftHand(playerCards);
+      const pair = isPair(playerCards);
+      
+      // Pair splitting logic (simplified - not implementing splits in UI, but for strategy reference)
+      if (pair && playerCards.length === 2) {
+        const pairValue = getCardNumericValue(playerCards[0]);
+        // Always split Aces and 8s
+        if (pairValue === 11 || pairValue === 8) {
+          return 'split';
+        }
+        // Never split 10s, 5s, 4s
+        if (pairValue === 10 || pairValue === 5 || pairValue === 4) {
+          // Continue to regular strategy
+        } else if (pairValue === 9) {
+          if (dealerValue === 7 || dealerValue >= 10) return 'stand';
+          return 'split';
+        } else if (pairValue === 7) {
+          if (dealerValue <= 7) return 'split';
+          return 'hit';
+        } else if (pairValue === 6) {
+          if (dealerValue >= 2 && dealerValue <= 6) return 'split';
+          return 'hit';
+        } else if (pairValue === 3 || pairValue === 2) {
+          if (dealerValue >= 4 && dealerValue <= 7) return 'split';
+          return 'hit';
+        }
+      }
+      
+      // Soft hands (hands with Ace counted as 11)
+      if (soft && playerValue <= 21) {
+        if (playerValue >= 19) return 'stand'; // A-8 or better
+        if (playerValue === 18) { // A-7
+          if (dealerValue >= 9) return 'hit';
+          if (dealerValue >= 3 && dealerValue <= 6 && canDouble) return 'double';
+          return 'stand';
+        }
+        if (playerValue === 17) { // A-6
+          if (dealerValue >= 3 && dealerValue <= 6 && canDouble) return 'double';
+          return 'hit';
+        }
+        if (playerValue === 16 || playerValue === 15) { // A-5, A-4
+          if (dealerValue >= 4 && dealerValue <= 6 && canDouble) return 'double';
+          return 'hit';
+        }
+        if (playerValue === 14 || playerValue === 13) { // A-3, A-2
+          if (dealerValue >= 5 && dealerValue <= 6 && canDouble) return 'double';
+          return 'hit';
+        }
+        return 'hit';
+      }
+      
+      // Hard hands
+      if (playerValue >= 17) return 'stand';
+      
+      if (playerValue === 16) {
+        if (dealerValue >= 7) return 'hit';
+        return 'stand';
+      }
+      
+      if (playerValue === 15) {
+        if (dealerValue >= 7) return 'hit';
+        return 'stand';
+      }
+      
+      if (playerValue === 14 || playerValue === 13) {
+        if (dealerValue >= 7) return 'hit';
+        return 'stand';
+      }
+      
+      if (playerValue === 12) {
+        if (dealerValue >= 4 && dealerValue <= 6) return 'stand';
+        return 'hit';
+      }
+      
+      if (playerValue === 11) {
+        if (canDouble) return 'double';
+        return 'hit';
+      }
+      
+      if (playerValue === 10) {
+        if (dealerValue <= 9 && canDouble) return 'double';
+        return 'hit';
+      }
+      
+      if (playerValue === 9) {
+        if (dealerValue >= 3 && dealerValue <= 6 && canDouble) return 'double';
+        return 'hit';
+      }
+      
+      return 'hit'; // For hands 8 or less
+    }
+
+    function checkPlayerDecision(action, playerCards, dealerUpCard, canDouble) {
+      const optimalAction = getBasicStrategyAction(playerCards, dealerUpCard, canDouble);
+      
+      // Map split to stand for comparison since we don't implement splitting
+      const normalizedOptimal = optimalAction === 'split' ? 'stand' : optimalAction;
+      
+      return {
+        isCorrect: action === normalizedOptimal,
+        optimalAction: optimalAction,
+        playerAction: action
+      };
+    }
+
+    function showStrategyFeedback(result, playerValue, dealerValue) {
+      const feedbackEl = document.getElementById('bj-strategy-feedback');
+      
+      if (result.isCorrect) {
+        feedbackEl.className = 'bj-strategy-feedback correct';
+        feedbackEl.innerHTML = `<strong>✓ Correct!</strong> ${result.playerAction.toUpperCase()} was the optimal play (${playerValue} vs ${dealerValue}).`;
+        bjCorrectPlays++;
+      } else {
+        feedbackEl.className = 'bj-strategy-feedback incorrect';
+        const suggestion = result.optimalAction === 'split' 
+          ? 'SPLIT (not available in this version, so STAND)' 
+          : result.optimalAction.toUpperCase();
+        feedbackEl.innerHTML = `<strong>✗ Suboptimal.</strong> You chose <strong>${result.playerAction.toUpperCase()}</strong>, but basic strategy suggests <strong>${suggestion}</strong> (${playerValue} vs ${dealerValue}).`;
+        bjIncorrectPlays++;
+      }
+      
+      feedbackEl.style.display = 'block';
+      
+      // Update stats
+      document.getElementById('bj-correct-plays').textContent = bjCorrectPlays;
+      document.getElementById('bj-incorrect-plays').textContent = bjIncorrectPlays;
+      
+      const total = bjCorrectPlays + bjIncorrectPlays;
+      if (total > 0) {
+        const accuracy = ((bjCorrectPlays / total) * 100).toFixed(1);
+        const accuracyEl = document.getElementById('bj-accuracy');
+        accuracyEl.textContent = accuracy + '%';
+        accuracyEl.className = 'stat-value ' + (parseFloat(accuracy) >= 80 ? 'good' : 'bad');
+      }
+      
+      // Auto-hide after 5 seconds
+      setTimeout(() => {
+        feedbackEl.style.display = 'none';
+      }, 5000);
+    }
+
+    function dealCard() {
+      if (bjDeck.length === 0) {
+        showError('Deck is empty! Shuffling new shoe...');
+        bjDeck = createDeck(bjNumDecks);
+      }
+      return bjDeck.pop();
+    }
+
+    function renderCard(card, hidden = false) {
+      const isRed = card.suit === '♥' || card.suit === '♦';
+      if (hidden) {
+        return '<div class="bj-card hidden">🂠</div>';
+      }
+      return `
+        <div class="bj-card ${isRed ? 'red' : 'black'}">
+          <div class="card-value">${card.value}</div>
+          <div class="card-suit">${card.suit}</div>
+        </div>
+      `;
+    }
+
+    function renderHand(cards, hideFirst = false) {
+      return cards.map((card, index) => {
+        if (hideFirst && index === 0) {
+          return renderCard(card, true);
+        }
+        return renderCard(card, false);
+      }).join('');
+    }
+
+    function updateDeckInfo() {
+      const cardsRemaining = bjDeck.length;
+      const totalCards = bjNumDecks * 52;
+      const penetration = ((totalCards - cardsRemaining) / totalCards * 100).toFixed(1);
+      
+      document.getElementById('bj-cards-remaining').textContent = cardsRemaining;
+      document.getElementById('bj-penetration').textContent = penetration + '%';
+      document.getElementById('bj-deck-count').textContent = `${totalCards} cards total`;
+    }
+
+    function updatePlayerDisplay() {
+      // Update dealer
+      const dealerEl = document.getElementById('bj-dealer');
+      const dealerCardsEl = document.getElementById('dealer-cards');
+      const dealerValueEl = document.getElementById('dealer-value');
+      const dealerStatusEl = document.getElementById('dealer-status');
+
+      const hideFirstCard = bjGameInProgress && bjCurrentPlayerIndex !== -2;
+      dealerCardsEl.innerHTML = renderHand(bjDealer.cards, hideFirstCard);
+      
+      if (hideFirstCard && bjDealer.cards.length > 0) {
+        const visibleValue = calculateHandValue(bjDealer.cards.slice(1));
+        dealerValueEl.innerHTML = `Showing: <strong>${visibleValue}</strong>`;
+      } else if (bjDealer.cards.length > 0) {
+        const value = calculateHandValue(bjDealer.cards);
+        dealerValueEl.innerHTML = `Hand Value: <strong>${value}</strong>`;
+      } else {
+        dealerValueEl.innerHTML = '';
+      }
+
+      // Update players
+      const playersAreaEl = document.getElementById('bj-players-area');
+      playersAreaEl.innerHTML = bjPlayers.map((player, index) => {
+        const value = calculateHandValue(player.cards);
+        const isActive = index === bjCurrentPlayerIndex;
+        const isHuman = player.isHuman;
+        
+        let statusHTML = '';
+        if (player.status) {
+          const statusClass = player.status === 'Win' ? 'win' : 
+                             player.status === 'Lose' ? 'lose' : 
+                             player.status === 'Push' ? 'push' :
+                             player.status === 'Blackjack!' ? 'blackjack' : '';
+          statusHTML = `<div class="bj-player-status ${statusClass}">${player.status}</div>`;
+        }
+
+        return `
+          <div class="bj-player ${isActive ? 'active' : ''}" id="player-${index}">
+            <div class="bj-player-header">
+              <div class="bj-player-name">
+                ${isHuman ? '👤 You' : `🤖 ${player.name}`}
+                ${isActive ? '<span style="color: #22c55e; margin-left: 4px;">●</span>' : ''}
+              </div>
+              ${statusHTML}
+            </div>
+            <div class="bj-cards">${renderHand(player.cards)}</div>
+            <div class="bj-hand-value">
+              Hand Value: <strong>${value}${value > 21 ? ' (BUST)' : ''}</strong>
+            </div>
+            <div class="bj-bet-info">Bet: <strong>$${player.bet}</strong></div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function aiPlayerDecision(player) {
+      const handValue = calculateHandValue(player.cards);
+      const dealerUpCard = bjDealer.cards[1];
+      const dealerValue = getCardNumericValue(dealerUpCard);
+
+      // Basic strategy simulation
+      // Simplified AI logic
+      if (handValue < 12) return 'hit';
+      if (handValue >= 17) return 'stand';
+      
+      // Between 12-16, decide based on dealer up card
+      if (handValue <= 16) {
+        if (dealerValue >= 7) return 'hit';
+        return 'stand';
+      }
+      
+      return 'stand';
+    }
+
+    async function playAITurn(playerIndex) {
+      const player = bjPlayers[playerIndex];
+      
+      while (true) {
+        await new Promise(resolve => setTimeout(resolve, 800));
+        
+        const decision = aiPlayerDecision(player);
+        
+        if (decision === 'hit') {
+          player.cards.push(dealCard());
+          updatePlayerDisplay();
+          updateDeckInfo();
+          
+          const value = calculateHandValue(player.cards);
+          if (value > 21) {
+            player.busted = true;
+            break;
+          }
+        } else {
+          break;
+        }
+      }
+    }
+
+    async function dealerTurn() {
+      bjCurrentPlayerIndex = -2; // Dealer's turn
+      updatePlayerDisplay();
+      
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      
+      while (calculateHandValue(bjDealer.cards) < 17) {
+        await new Promise(resolve => setTimeout(resolve, 800));
+        bjDealer.cards.push(dealCard());
+        updatePlayerDisplay();
+        updateDeckInfo();
+      }
+      
+      const dealerValue = calculateHandValue(bjDealer.cards);
+      if (dealerValue > 21) {
+        bjDealer.busted = true;
+        document.getElementById('dealer-status').textContent = 'BUST';
+        document.getElementById('dealer-status').className = 'bj-player-status lose';
+      }
+    }
+
+    function resolveHands() {
+      const dealerValue = calculateHandValue(bjDealer.cards);
+      const dealerBlackjack = isBlackjack(bjDealer.cards);
+      
+      bjPlayers.forEach(player => {
+        const playerValue = calculateHandValue(player.cards);
+        const playerBlackjack = isBlackjack(player.cards);
+        
+        if (player.busted) {
+          player.status = 'Lose';
+          if (player.isHuman) {
+            balance -= player.bet;
+          }
+        } else if (playerBlackjack && !dealerBlackjack) {
+          player.status = 'Blackjack!';
+          if (player.isHuman) {
+            balance += player.bet * 1.5; // 3:2 payout
+          }
+        } else if (bjDealer.busted) {
+          player.status = 'Win';
+          if (player.isHuman) {
+            balance += player.bet;
+          }
+        } else if (playerValue > dealerValue) {
+          player.status = 'Win';
+          if (player.isHuman) {
+            balance += player.bet;
+          }
+        } else if (playerValue < dealerValue) {
+          player.status = 'Lose';
+          if (player.isHuman) {
+            balance -= player.bet;
+          }
+        } else {
+          player.status = 'Push';
+          // No change to balance on push
+        }
+      });
+      
+      updateBalanceDisplay();
+      updatePlayerDisplay();
+    }
+
+    async function startBlackjackGame() {
+      const numAIPlayers = parseInt(document.getElementById('bj-num-players').value);
+      bjPlayerBet = parseInt(document.getElementById('bj-bet-amount').value);
+      
+      if (bjPlayerBet <= 0 || bjPlayerBet > balance) {
+        showError('Invalid bet amount!');
+        return;
+      }
+      
+      // Initialize players
+      bjPlayers = [
+        { name: 'You', cards: [], bet: bjPlayerBet, isHuman: true, busted: false, status: '' }
+      ];
+      
+      for (let i = 0; i < numAIPlayers; i++) {
+        const aiNames = ['Alice', 'Bob', 'Charlie', 'Diana', 'Eve', 'Frank'];
+        bjPlayers.push({
+          name: aiNames[i],
+          cards: [],
+          bet: Math.floor(Math.random() * 50) + 10,
+          isHuman: false,
+          busted: false,
+          status: ''
+        });
+      }
+      
+      // Initialize dealer
+      bjDealer = { cards: [], busted: false };
+      document.getElementById('dealer-status').textContent = '';
+      
+      bjGameInProgress = true;
+      bjCurrentPlayerIndex = -1;
+      
+      // Deal initial cards
+      for (let i = 0; i < 2; i++) {
+        for (const player of bjPlayers) {
+          player.cards.push(dealCard());
+        }
+        bjDealer.cards.push(dealCard());
+      }
+      
+      updatePlayerDisplay();
+      updateDeckInfo();
+      
+      // Check for dealer blackjack
+      if (isBlackjack(bjDealer.cards)) {
+        await dealerTurn();
+        resolveHands();
+        bjGameInProgress = false;
+        document.getElementById('bj-game-actions').style.display = 'none';
+        return;
+      }
+      
+      // Check for player blackjacks
+      const humanPlayer = bjPlayers[0];
+      if (isBlackjack(humanPlayer.cards)) {
+        // Human has blackjack, skip to AI players
+        bjCurrentPlayerIndex = 1;
+      } else {
+        // Start with human player
+        bjCurrentPlayerIndex = 0;
+      }
+      
+      if (bjCurrentPlayerIndex === 0) {
+        // Show action buttons for human
+        document.getElementById('bj-game-actions').style.display = 'flex';
+        document.getElementById('bj-double-btn').disabled = false;
+      } else {
+        document.getElementById('bj-game-actions').style.display = 'none';
+        // Continue to AI players or dealer
+        continueGame();
+      }
+      
+      updatePlayerDisplay();
+    }
+
+    async function continueGame() {
+      // Play AI turns
+      while (bjCurrentPlayerIndex < bjPlayers.length) {
+        if (bjCurrentPlayerIndex < 0) {
+          bjCurrentPlayerIndex++;
+          continue;
+        }
+        
+        const currentPlayer = bjPlayers[bjCurrentPlayerIndex];
+        
+        if (!currentPlayer.isHuman && !currentPlayer.busted && !isBlackjack(currentPlayer.cards)) {
+          updatePlayerDisplay();
+          await playAITurn(bjCurrentPlayerIndex);
+        }
+        
+        bjCurrentPlayerIndex++;
+      }
+      
+      // Dealer's turn
+      const anyPlayerNotBusted = bjPlayers.some(p => !p.busted);
+      if (anyPlayerNotBusted) {
+        await dealerTurn();
+      }
+      
+      // Resolve all hands
+      resolveHands();
+      bjGameInProgress = false;
+      bjCurrentPlayerIndex = -1;
+      document.getElementById('bj-game-actions').style.display = 'none';
+    }
+
+    function playerHit() {
+      const player = bjPlayers[bjCurrentPlayerIndex];
+      const dealerUpCard = bjDealer.cards[1];
+      
+      // Check strategy before executing
+      const canDouble = player.cards.length === 2 && balance >= player.bet;
+      const result = checkPlayerDecision('hit', player.cards, dealerUpCard, canDouble);
+      const playerValue = calculateHandValue(player.cards);
+      const dealerValue = getCardNumericValue(dealerUpCard);
+      
+      player.cards.push(dealCard());
+      updatePlayerDisplay();
+      updateDeckInfo();
+      
+      // Show feedback
+      showStrategyFeedback(result, playerValue, dealerValue);
+      
+      const value = calculateHandValue(player.cards);
+      if (value > 21) {
+        player.busted = true;
+        document.getElementById('bj-game-actions').style.display = 'none';
+        bjCurrentPlayerIndex++;
+        continueGame();
+      } else {
+        // Disable double down after first hit
+        document.getElementById('bj-double-btn').disabled = true;
+      }
+    }
+
+    function playerStand() {
+      const player = bjPlayers[bjCurrentPlayerIndex];
+      const dealerUpCard = bjDealer.cards[1];
+      
+      // Check strategy
+      const canDouble = player.cards.length === 2 && balance >= player.bet;
+      const result = checkPlayerDecision('stand', player.cards, dealerUpCard, canDouble);
+      const playerValue = calculateHandValue(player.cards);
+      const dealerValue = getCardNumericValue(dealerUpCard);
+      
+      showStrategyFeedback(result, playerValue, dealerValue);
+      
+      document.getElementById('bj-game-actions').style.display = 'none';
+      bjCurrentPlayerIndex++;
+      continueGame();
+    }
+
+    function playerDouble() {
+      const player = bjPlayers[bjCurrentPlayerIndex];
+      
+      if (balance < player.bet) {
+        showError('Insufficient balance to double down!');
+        return;
+      }
+      
+      const dealerUpCard = bjDealer.cards[1];
+      
+      // Check strategy
+      const result = checkPlayerDecision('double', player.cards, dealerUpCard, true);
+      const playerValue = calculateHandValue(player.cards);
+      const dealerValue = getCardNumericValue(dealerUpCard);
+      
+      showStrategyFeedback(result, playerValue, dealerValue);
+      
+      player.bet *= 2;
+      player.cards.push(dealCard());
+      updatePlayerDisplay();
+      updateDeckInfo();
+      
+      const value = calculateHandValue(player.cards);
+      if (value > 21) {
+        player.busted = true;
+      }
+      
+      document.getElementById('bj-game-actions').style.display = 'none';
+      bjCurrentPlayerIndex++;
+      continueGame();
+    }
+
+    // --- Strategy descriptions ---
+    const STRATEGIES = {
+      flat: 'Bet the same amount every round. Simple and predictable. Works with any odds.',
+      martingale: 'Double your bet after each loss. High risk, aims to recover losses with one win. Works with 1:1 and 2:1 odds.',
+      'dual-martingale': '2 independent Martingale progressions on 2:1 bets. Each bet doubles independently after loss. Covers ~63% of numbers with higher capital requirements.',
+      'reverse-martingale': 'Double your bet after each win. Ride winning streaks. Works with any odds.',
+      dalembert: 'Increase bet by 1 unit after loss, decrease by 1 after win. Gentler progression.',
+      fibonacci: 'Follow Fibonacci sequence (1,1,2,3,5,8...) after losses. Mathematical progression.',
+      labouchere: 'Create a sequence (1,2,3,4), bet sum of ends, cross off on win. Complex strategy.',
+      paroli: 'Let winnings ride for 3 wins (1-3-2-6 system), then reset. Conservative progression.'
+    };
+
+    // --- Simulation state ---
+    let simulationRunning = false;
+    let simulationStopped = false;
+
     // --- Core game state ---
     const START_BALANCE = 1000;
     let balance = START_BALANCE;
@@ -1485,7 +2757,458 @@
       }, 2000);
     }
 
+    // --- Strategy Simulator Functions ---
+    function getNextBet(strategy, currentBet, lastWin, sequence, winStreak, lossStreak, initialBet, maxBet) {
+      let nextBet = currentBet;
+
+      switch(strategy) {
+        case 'flat':
+          nextBet = initialBet;
+          break;
+
+        case 'martingale':
+          if (lastWin) {
+            nextBet = initialBet;
+          } else {
+            nextBet = Math.min(currentBet * 2, maxBet);
+          }
+          break;
+
+        case 'reverse-martingale':
+          if (lastWin) {
+            nextBet = Math.min(currentBet * 2, maxBet);
+          } else {
+            nextBet = initialBet;
+          }
+          break;
+
+        case 'dalembert':
+          if (lastWin) {
+            nextBet = Math.max(currentBet - initialBet, initialBet);
+          } else {
+            nextBet = Math.min(currentBet + initialBet, maxBet);
+          }
+          break;
+
+        case 'fibonacci':
+          if (!sequence || sequence.length === 0) {
+            sequence = [initialBet, initialBet];
+          }
+          if (lastWin) {
+            // Move back 2 positions
+            sequence = sequence.slice(0, -2);
+            if (sequence.length === 0) sequence = [initialBet];
+            nextBet = sequence[sequence.length - 1];
+          } else {
+            // Add next number in sequence
+            const next = sequence[sequence.length - 1] + sequence[sequence.length - 2];
+            sequence.push(Math.min(next, maxBet));
+            nextBet = sequence[sequence.length - 1];
+          }
+          break;
+
+        case 'labouchere':
+          if (!sequence || sequence.length === 0) {
+            sequence = [initialBet, initialBet * 2, initialBet * 3, initialBet * 4];
+          }
+          if (lastWin) {
+            // Remove first and last
+            sequence = sequence.slice(1, -1);
+            if (sequence.length === 0) {
+              sequence = [initialBet];
+              nextBet = initialBet;
+            } else {
+              nextBet = Math.min(sequence[0] + sequence[sequence.length - 1], maxBet);
+            }
+          } else {
+            // Add sum to end
+            const sum = sequence[0] + sequence[sequence.length - 1];
+            sequence.push(sum);
+            nextBet = Math.min(sequence[0] + sequence[sequence.length - 1], maxBet);
+          }
+          break;
+
+        case 'paroli':
+          if (lastWin) {
+            if (winStreak < 3) {
+              nextBet = Math.min(currentBet * 2, maxBet);
+            } else {
+              nextBet = initialBet; // Reset after 3 wins
+            }
+          } else {
+            nextBet = initialBet;
+          }
+          break;
+      }
+
+      return { nextBet, sequence };
+    }
+
+    function checkBetWin(betTarget, outcomeNumber) {
+      const outcomeStr = String(outcomeNumber);
+      const outcomeNum = typeof outcomeNumber === 'number' ? outcomeNumber : (outcomeNumber === '00' ? -1 : 0);
+      const color = getColor(outcomeNumber);
+
+      switch(betTarget) {
+        case 'red':
+          return color === 'red';
+        case 'black':
+          return color === 'black';
+        case 'odd':
+          return outcomeNum > 0 && outcomeNum % 2 === 1;
+        case 'even':
+          return outcomeNum > 0 && outcomeNum % 2 === 0;
+        case 'low':
+          return outcomeNum >= 1 && outcomeNum <= 18;
+        case 'high':
+          return outcomeNum >= 19 && outcomeNum <= 36;
+        case 'dozen-1':
+          return outcomeNum >= 1 && outcomeNum <= 12;
+        case 'dozen-2':
+          return outcomeNum >= 13 && outcomeNum <= 24;
+        case 'dozen-3':
+          return outcomeNum >= 25 && outcomeNum <= 36;
+        case 'column-1':
+          return outcomeNum > 0 && (outcomeNum - 1) % 3 === 0;
+        case 'column-2':
+          return outcomeNum > 0 && (outcomeNum - 2) % 3 === 0;
+        case 'column-3':
+          return outcomeNum > 0 && (outcomeNum - 3) % 3 === 0;
+        default:
+          return false;
+      }
+    }
+
+    function getBetPayout(betTarget) {
+      // Returns the payout multiplier (including original bet)
+      // 1:1 bets return 2x (bet + winnings)
+      // 2:1 bets return 3x (bet + 2x winnings)
+      if (betTarget.startsWith('dozen-') || betTarget.startsWith('column-')) {
+        return 3; // 2:1 payout = 3x total return
+      }
+      return 2; // 1:1 payout = 2x total return
+    }
+
+    function getBetOddsLabel(betTarget) {
+      if (betTarget.startsWith('dual-')) {
+        return '2x 2:1 bets (~63.2% chance, independent progressions)';
+      }
+      if (betTarget.startsWith('dozen-') || betTarget.startsWith('column-')) {
+        return '2:1 (~32.4% chance)';
+      }
+      return '1:1 (~47.4% chance)';
+    }
+
+    function parseDualBets(dualBetTarget) {
+      // Returns array of two bet targets
+      const mapping = {
+        'dual-dozen-1-2': ['dozen-1', 'dozen-2'],
+        'dual-dozen-1-3': ['dozen-1', 'dozen-3'],
+        'dual-dozen-2-3': ['dozen-2', 'dozen-3'],
+        'dual-column-1-2': ['column-1', 'column-2'],
+        'dual-column-1-3': ['column-1', 'column-3'],
+        'dual-column-2-3': ['column-2', 'column-3']
+      };
+      return mapping[dualBetTarget] || null;
+    }
+
+    async function runSimulation() {
+      const strategy = document.getElementById('strategy-type').value;
+      const betTarget = document.getElementById('sim-bet-target').value;
+      const initialBet = parseInt(document.getElementById('sim-initial-bet').value);
+      const numRounds = parseInt(document.getElementById('sim-rounds').value);
+      const startingBalance = parseInt(document.getElementById('sim-starting-balance').value);
+      const maxBet = parseInt(document.getElementById('sim-max-bet').value);
+
+      if (initialBet <= 0 || numRounds <= 0 || startingBalance <= 0 || maxBet <= 0) {
+        showError('Please enter valid positive numbers for all fields!');
+        return;
+      }
+
+      // For dual betting, need 2x the initial bet
+      const minRequired = strategy === 'dual-martingale' ? initialBet * 2 : initialBet;
+      if (minRequired > startingBalance) {
+        showError(`Initial bet${strategy === 'dual-martingale' ? 's' : ''} cannot exceed starting bankroll!`);
+        return;
+      }
+
+      simulationRunning = true;
+      simulationStopped = false;
+      document.getElementById('run-sim-btn').disabled = true;
+      document.getElementById('stop-sim-btn').disabled = false;
+      document.getElementById('sim-progress').style.display = 'block';
+
+      let simBalance = startingBalance;
+      let currentBet = initialBet;
+      let wins = 0;
+      let losses = 0;
+      let totalWagered = 0;
+      let maxBalance = startingBalance;
+      let minBalance = startingBalance;
+      let balanceHistory = [startingBalance];
+      let sequence = null;
+      let winStreak = 0;
+      let lossStreak = 0;
+
+      // Dual Martingale specific variables
+      let currentBet1 = initialBet;
+      let currentBet2 = initialBet;
+      let dualBets = null;
+
+      if (strategy === 'dual-martingale') {
+        dualBets = parseDualBets(betTarget);
+        if (!dualBets) {
+          showError('Please select a dual bet target for Dual Martingale!');
+          simulationRunning = false;
+          document.getElementById('run-sim-btn').disabled = false;
+          document.getElementById('stop-sim-btn').disabled = true;
+          return;
+        }
+      }
+
+      for (let round = 0; round < numRounds; round++) {
+        if (simulationStopped) break;
+
+        if (strategy === 'dual-martingale') {
+          // Dual Martingale: Two independent bets
+          const totalBet = currentBet1 + currentBet2;
+          
+          if (simBalance < totalBet) {
+            break; // Can't afford both bets
+          }
+
+          // Place both bets
+          simBalance -= totalBet;
+          totalWagered += totalBet;
+
+          // Spin once
+          const outcome = spinWheel();
+          const won1 = checkBetWin(dualBets[0], outcome);
+          const won2 = checkBetWin(dualBets[1], outcome);
+
+          // Calculate winnings for each bet independently
+          const payout = getBetPayout(dualBets[0]); // Both are 2:1 bets
+          let roundProfit = 0;
+
+          if (won1) {
+            roundProfit += currentBet1 * payout;
+          }
+          if (won2) {
+            roundProfit += currentBet2 * payout;
+          }
+
+          simBalance += roundProfit;
+
+          // Track overall win/loss for stats
+          if (won1 || won2) {
+            wins++;
+          } else {
+            losses++;
+          }
+
+          // Update each bet independently (Martingale logic)
+          if (won1) {
+            currentBet1 = initialBet; // Reset to base
+          } else {
+            currentBet1 = Math.min(currentBet1 * 2, maxBet); // Double
+          }
+
+          if (won2) {
+            currentBet2 = initialBet; // Reset to base
+          } else {
+            currentBet2 = Math.min(currentBet2 * 2, maxBet); // Double
+          }
+        } else {
+          // Standard single bet logic
+          if (simBalance < currentBet) {
+            break;
+          }
+
+          simBalance -= currentBet;
+          totalWagered += currentBet;
+
+          const outcome = spinWheel();
+          const won = checkBetWin(betTarget, outcome);
+
+          const payoutMultiplier = getBetPayout(betTarget);
+          if (won) {
+            simBalance += currentBet * payoutMultiplier;
+            wins++;
+            winStreak++;
+            lossStreak = 0;
+          } else {
+            losses++;
+            lossStreak++;
+            winStreak = 0;
+          }
+
+          // Get next bet
+          const result = getNextBet(strategy, currentBet, won, sequence, winStreak, lossStreak, initialBet, maxBet);
+          currentBet = result.nextBet;
+          sequence = result.sequence;
+        }
+
+        // Track max/min
+        maxBalance = Math.max(maxBalance, simBalance);
+        minBalance = Math.min(minBalance, simBalance);
+        balanceHistory.push(simBalance);
+
+        // Update progress every 10 rounds or if it's the last round
+        if (round % 10 === 0 || round === numRounds - 1) {
+          updateSimulationProgress(round + 1, numRounds);
+          await new Promise(resolve => setTimeout(resolve, 1)); // Allow UI to update
+        }
+      }
+
+      simulationRunning = false;
+      document.getElementById('run-sim-btn').disabled = false;
+      document.getElementById('stop-sim-btn').disabled = true;
+
+      // Display results
+      displaySimulationResults({
+        startingBalance,
+        finalBalance: simBalance,
+        rounds: balanceHistory.length - 1,
+        totalRounds: numRounds,
+        wins,
+        losses,
+        totalWagered,
+        maxBalance,
+        minBalance,
+        balanceHistory
+      });
+    }
+
+    function updateSimulationProgress(current, total) {
+      const percent = (current / total * 100).toFixed(1);
+      document.getElementById('sim-progress-text').textContent = `${current} / ${total}`;
+      document.getElementById('progress-fill').style.width = `${percent}%`;
+    }
+
+    function displaySimulationResults(results) {
+      const profit = results.finalBalance - results.startingBalance;
+      const profitPct = ((profit / results.startingBalance) * 100).toFixed(2);
+      const winRate = results.wins + results.losses > 0 
+        ? ((results.wins / (results.wins + results.losses)) * 100).toFixed(1)
+        : 0;
+      const drawdown = results.startingBalance - results.minBalance;
+
+      document.getElementById('sim-final-balance').textContent = `$${results.finalBalance}`;
+      document.getElementById('sim-final-balance').style.color = profit >= 0 ? '#4ade80' : '#f97373';
+      document.getElementById('sim-profit-pct').textContent = `${profit >= 0 ? '+' : ''}${profitPct}%`;
+      document.getElementById('sim-profit-pct').style.color = profit >= 0 ? '#4ade80' : '#f97373';
+      
+      document.getElementById('sim-rounds-played').textContent = results.rounds;
+      document.getElementById('sim-rounds-total').textContent = results.totalRounds;
+      
+      document.getElementById('sim-wins').textContent = results.wins;
+      document.getElementById('sim-losses').textContent = results.losses;
+      document.getElementById('sim-win-rate').textContent = `${winRate}%`;
+      
+      document.getElementById('sim-total-wagered').textContent = `$${results.totalWagered}`;
+      document.getElementById('sim-max-balance').textContent = `$${results.maxBalance}`;
+      document.getElementById('sim-max-drawdown').textContent = `$${drawdown}`;
+
+      // Draw chart
+      drawBalanceChart(results.balanceHistory, results.startingBalance);
+
+      document.getElementById('sim-results').classList.add('active');
+    }
+
+    function drawBalanceChart(balanceHistory, startingBalance) {
+      const chartWidth = 800;
+      const chartHeight = 180;
+      const padding = 20;
+      const plotWidth = chartWidth - padding * 2;
+      const plotHeight = chartHeight - padding * 2;
+
+      const maxBalance = Math.max(...balanceHistory);
+      const minBalance = Math.min(...balanceHistory);
+      const range = maxBalance - minBalance || 1;
+
+      const points = balanceHistory.map((balance, index) => {
+        const x = padding + (index / (balanceHistory.length - 1)) * plotWidth;
+        const y = padding + plotHeight - ((balance - minBalance) / range) * plotHeight;
+        return `${x},${y}`;
+      }).join(' ');
+
+      document.getElementById('balance-line').setAttribute('points', points);
+
+      // Add starting balance line
+      const startY = padding + plotHeight - ((startingBalance - minBalance) / range) * plotHeight;
+      const existingStartLine = document.getElementById('start-line');
+      if (existingStartLine) existingStartLine.remove();
+      
+      const startLine = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+      startLine.setAttribute('id', 'start-line');
+      startLine.setAttribute('class', 'chart-grid');
+      startLine.setAttribute('x1', padding);
+      startLine.setAttribute('y1', startY);
+      startLine.setAttribute('x2', chartWidth - padding);
+      startLine.setAttribute('y2', startY);
+      startLine.setAttribute('stroke', 'rgba(52,211,153,0.4)');
+      startLine.setAttribute('stroke-dasharray', '4,4');
+      document.getElementById('balance-chart').appendChild(startLine);
+    }
+
+    function updateStrategyInfo() {
+      const strategy = document.getElementById('strategy-type').value;
+      const info = STRATEGIES[strategy] || '';
+      document.getElementById('strategy-info').textContent = info;
+    }
+
     // --- Event handlers ---
+    // Strategy info update
+    document.getElementById('strategy-type').addEventListener('change', function() {
+      updateStrategyInfo();
+      
+      // Show/hide dual bet options
+      const isDualMartingale = this.value === 'dual-martingale';
+      const dualBetGroup = document.getElementById('dual-bet-group');
+      const betTargetLabel = document.getElementById('bet-target-label');
+      
+      if (isDualMartingale) {
+        dualBetGroup.style.display = 'block';
+        betTargetLabel.textContent = '(Select dual bet)';
+        // Auto-select first dual option
+        document.getElementById('sim-bet-target').value = 'dual-dozen-1-2';
+      } else {
+        dualBetGroup.style.display = 'none';
+        betTargetLabel.textContent = '';
+        // Reset to single bet if dual was selected
+        const currentTarget = document.getElementById('sim-bet-target').value;
+        if (currentTarget.startsWith('dual-')) {
+          document.getElementById('sim-bet-target').value = 'red';
+        }
+      }
+      
+      // Update odds hint
+      const betTarget = document.getElementById('sim-bet-target').value;
+      const oddsLabel = getBetOddsLabel(betTarget);
+      document.getElementById('bet-odds-hint').textContent = `Pays ${oddsLabel}`;
+    });
+
+    // Bet target odds hint update
+    document.getElementById('sim-bet-target').addEventListener('change', function() {
+      const betTarget = this.value;
+      const oddsLabel = getBetOddsLabel(betTarget);
+      document.getElementById('bet-odds-hint').textContent = `Pays ${oddsLabel}`;
+    });
+
+    // Simulation controls
+    document.getElementById('run-sim-btn').addEventListener('click', runSimulation);
+
+    document.getElementById('stop-sim-btn').addEventListener('click', () => {
+      simulationStopped = true;
+      document.getElementById('stop-sim-btn').disabled = true;
+    });
+
+    document.getElementById('clear-sim-btn').addEventListener('click', () => {
+      document.getElementById('sim-results').classList.remove('active');
+      document.getElementById('sim-progress').style.display = 'none';
+      document.getElementById('progress-fill').style.width = '0%';
+    });
+
     // Chip selection
     document.querySelectorAll('.chip-btn').forEach(btn => {
       btn.addEventListener('click', () => {
@@ -1588,10 +3311,45 @@
       }
     });
 
+    // Blackjack event listeners
+    document.getElementById('bj-num-decks').addEventListener('change', function() {
+      bjNumDecks = parseInt(this.value);
+      bjDeck = createDeck(bjNumDecks);
+      updateDeckInfo();
+    });
+
+    document.getElementById('bj-reset-deck-btn').addEventListener('click', function() {
+      bjDeck = createDeck(bjNumDecks);
+      updateDeckInfo();
+      showError('Deck shuffled!');
+      setTimeout(() => errorEl.textContent = '', 2000);
+    });
+
+    document.getElementById('bj-deal-btn').addEventListener('click', function() {
+      if (bjGameInProgress) {
+        showError('Game in progress!');
+        return;
+      }
+      startBlackjackGame();
+    });
+
+    document.getElementById('bj-hit-btn').addEventListener('click', playerHit);
+    document.getElementById('bj-stand-btn').addEventListener('click', playerStand);
+    document.getElementById('bj-double-btn').addEventListener('click', playerDouble);
+
     // Initial setup
     updateBalanceDisplay();
     generateRouletteTable();
     updateBetDisplay();
+    updateStrategyInfo();
+    
+    // Set initial odds hint
+    const initialBetTarget = document.getElementById('sim-bet-target').value;
+    document.getElementById('bet-odds-hint').textContent = `Pays ${getBetOddsLabel(initialBetTarget)}`;
+    
+    // Initialize Blackjack
+    bjDeck = createDeck(bjNumDecks);
+    updateDeckInfo();
   </script>
 </body>
-</html><!DOCTYPE html>
+</html>
